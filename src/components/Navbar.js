@@ -24,7 +24,7 @@ const Navbar = () => {
       <nav
         className="flex gap-4 text-cyan-600"
       >
-        <h2>Rockets</h2>
+        <NavLink to="/rockets" className={({ isActive }) => (isActive ? activeClassName : undefined)}>Rockets</NavLink>
         <h2>Missions</h2>
         <span className="text-black">|</span>
         <NavLink to="/" className={({ isActive }) => (isActive ? activeClassName : undefined)}>My Profile</NavLink>

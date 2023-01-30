@@ -4,6 +4,7 @@ import {
   Route,
 } from 'react-router-dom';
 import MyProfile from './pages/Profile';
+import Rockets from './pages/Rockets';
 
 export default function App() {
   return (
@@ -13,6 +14,12 @@ export default function App() {
           path="/"
           element={(
             <MyProfile />
+)}
+        />
+        <Route
+          path="/rockets"
+          element={(
+            <Rockets />
 )}
         />
       </Routes>
