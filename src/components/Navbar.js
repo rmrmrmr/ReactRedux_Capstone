@@ -2,7 +2,7 @@ import React from 'react';
 
 const Navbar = () => (
   <header
-    className="flex justify-between items-center"
+    className="flex justify-between items-center border-solid border border-slate-700"
   >
     <div
       className="flex items-center"
