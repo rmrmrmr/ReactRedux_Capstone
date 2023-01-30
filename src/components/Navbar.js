@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => (
   <header
@@ -24,7 +25,7 @@ const Navbar = () => (
       <h2>Rockets</h2>
       <h2>Missions</h2>
       <span>|</span>
-      <h2>My Profile</h2>
+      <NavLink to="/">My Profile</NavLink>
     </nav>
   </header>
 );

@@ -1,11 +1,21 @@
-import Navbar from './components/Navbar';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom';
+import MyProfile from './pages/Profile';
 
-function App() {
+export default function App() {
   return (
-    <div>
-      <Navbar />
-    </div>
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={(
+            <MyProfile />
+)}
+        />
+      </Routes>
+    </Router>
   );
 }
-
-export default App;
