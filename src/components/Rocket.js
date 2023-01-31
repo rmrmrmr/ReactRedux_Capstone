@@ -8,19 +8,33 @@ const Rocket = ({
   return (
     <div
       id={rocketID}
-      className="flex w-full h-1/4"
+      className="flex w-full h-1/3 py-5 gap-6"
     >
       <img
-        className="h-full"
+        className="h-full w-[28%] max-w-[250px]"
         src={img}
         alt="img not found"
       />
-      <h2
-        className=""
+      <div
+        className="h-full w-[72%] flex flex-col items-start"
       >
-        {name}
-      </h2>
-      <h3>{description}</h3>
+        <h2
+          className="font-semibold text-xl"
+        >
+          {name}
+        </h2>
+        <h3
+          className="text-sm mt-1"
+        >
+          {description}
+        </h3>
+        <button
+          type="button"
+          className="text-white bg-blue-500 px-4 py-2 rounded-md mt-4"
+        >
+          Reserve Rocket
+        </button>
+      </div>
     </div>
   );
 };

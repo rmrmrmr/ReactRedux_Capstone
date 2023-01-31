@@ -15,7 +15,7 @@ const RocketsList = () => {
   return (
     <div className="flex h-screen flex-wrap w-screen">
       <Navbar />
-      <div className="h-5/6">
+      <div className="h-5/6 px-12">
         {
           rockets.length ? rockets.map((rocket) => (
             <Rocket
