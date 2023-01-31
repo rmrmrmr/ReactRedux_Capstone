@@ -1,15 +1,16 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const baseURL = 'https://api.spacexdata.com/v3/missions';
+const baseURL = 'https://api.spacexdata.com/v3/rockets';
 
 const createRocketsList = (obj) => {
   const result = [];
   obj.forEach((item) => {
     result.push({
-      mission_id: item.mission_id,
-      mission_name: item.mission_name,
+      id: item.id,
+      name: item.rocket_name,
       description: item.description,
+      img: item.flickr_images[0],
     });
   });
   return result;
