@@ -8,6 +8,7 @@ const createRocketsList = (obj) => {
   obj.forEach((item) => {
     result.push({
       id: item.id,
+      rocketID: `rocket${item.id.toString()}`,
       name: item.rocket_name,
       description: item.description,
       img: item.flickr_images[0],

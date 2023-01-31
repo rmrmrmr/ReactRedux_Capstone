@@ -5,7 +5,7 @@ const Navbar = () => {
   const activeClassName = 'underline';
   return (
     <header
-      className="flex justify-between items-center border-solid border-b border-slate-700 mx-10 py-3"
+      className="flex justify-between items-center border-solid border-b border-slate-700 mx-10 py-3 h-1/6 w-screen"
     >
       <div
         className="flex items-center gap-4"
