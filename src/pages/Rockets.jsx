@@ -25,7 +25,6 @@ const RocketsList = () => {
               description={rocket.description}
               key={rocket.id}
               reserved={rocket.reserved}
-
             />
           )) : <h1>Rockets not found</h1>
         }
