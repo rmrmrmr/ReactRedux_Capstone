@@ -9,8 +9,10 @@ const RocketsList = () => {
   const { rockets } = useSelector((state) => state.rockets);
 
   useEffect(() => {
-    dispatch(getRockets());
-  }, [dispatch]);
+    if (rockets === 0) {
+      dispatch(getRockets());
+    }
+  });
 
   return (
     <div className="flex h-screen flex-wrap w-screen">
@@ -24,6 +26,7 @@ const RocketsList = () => {
               name={rocket.name}
               description={rocket.description}
               key={rocket.id}
+              reserved={rocket.reserved}
             />
           )) : <h1>Rockets not found</h1>
         }
