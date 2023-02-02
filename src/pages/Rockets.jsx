@@ -9,8 +9,10 @@ const RocketsList = () => {
   const { rockets } = useSelector((state) => state.rockets);
 
   useEffect(() => {
-    dispatch(getRockets());
-  }, [dispatch]);
+    if (rockets === 0) {
+      dispatch(getRockets());
+    }
+  });
 
   return (
     <div className="flex h-screen flex-wrap w-screen">
