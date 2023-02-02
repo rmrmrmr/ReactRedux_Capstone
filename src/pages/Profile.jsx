@@ -2,9 +2,11 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 
 const MyProfile = () => (
-  <div className="Flex">
+  <div className="flex w-screen h-screen flex-wrap">
     <Navbar />
-    <h1>Profile</h1>
+    <div className="h-5/6 px-12">
+      <h1>Profile</h1>
+    </div>
   </div>
 );
 
