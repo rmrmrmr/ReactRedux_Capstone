@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import getRockets from './connectAPI';
+import getRockets, { reserveRocket, cancelRocket } from './connectAPI';
 
 const initialState = {
   rockets: [],
@@ -22,6 +22,14 @@ const rockets = createSlice({
     [getRockets.rejected]: (state) => ({
       ...state,
       status: 'rejected',
+    }),
+    [reserveRocket.fulfilled]: (state, action) => ({
+      status: 'success',
+      rockets: action.payload,
+    }),
+    [cancelRocket.fulfilled]: (state, action) => ({
+      status: 'success',
+      rockets: action.payload,
     }),
   },
 });
