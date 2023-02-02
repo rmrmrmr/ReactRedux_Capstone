@@ -18,7 +18,7 @@ const Missions = () => {
   };
 
   return (
-    <div className="overflow-x-auto relative shadow-md rounded-lg">
+    <div className="flex h-screen flex-wrap w-screen">
       <Navbar />
       <table className="text-sm text-left text-gray-500 m-8 border">
         <thead className="text-xs text-gray-700 uppercase bg-white">
