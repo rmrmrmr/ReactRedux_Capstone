@@ -7,8 +7,8 @@ const createRocketsList = (obj) => {
   const result = [];
   obj.forEach((item) => {
     result.push({
-      id: item.id,
       rocketID: `rocket${item.id.toString()}`,
+      id: item.id,
       name: item.rocket_name,
       description: item.description,
       img: item.flickr_images[0],
@@ -38,6 +38,19 @@ export const reserveRocket = createAsyncThunk(
         return rocket;
       }
       return { ...rocket, reserved: true };
+    });
+    return newState;
+  },
+);
+
+export const cancelRocket = createAsyncThunk(
+  'rockets/canelRockets',
+  async (payload, thunkAPI) => {
+    const newState = thunkAPI.getState().rockets.rockets.map((rocket) => {
+      if (rocket.rocketID !== payload) {
+        return rocket;
+      }
+      return { ...rocket, reserved: false };
     });
     return newState;
   },

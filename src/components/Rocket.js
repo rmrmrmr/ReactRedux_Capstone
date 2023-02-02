@@ -1,13 +1,16 @@
 import propTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { reserveRocket } from '../redux/rockets/connectAPI';
+import { reserveRocket, cancelRocket } from '../redux/rockets/connectAPI';
 
 const Rocket = ({
-  rocketID, name, description, img,
+  rocketID, name, description, img, reserved,
 }) => {
   const dispatch = useDispatch();
-  const actionButton = () => {
+  const reserveButton = () => {
     dispatch(reserveRocket(rocketID));
+  };
+  const cancelButton = () => {
+    dispatch(cancelRocket(rocketID));
   };
 
   return (
@@ -35,8 +38,15 @@ const Rocket = ({
         </h3>
         <button
           type="button"
-          className="text-white bg-blue-500 px-4 py-2 rounded-md mt-4"
-          onClick={() => actionButton()}
+          className="px-4 py-2 rounded-md mt-4 text-slate-600 border-2 border-slate-600 font-semibold"
+          onClick={() => cancelButton()}
+        >
+          Cancel Reservation
+        </button>
+        <button
+          type="button"
+          className="text-white bg-blue-500 px-4 py-2 rounded-md mt-4 font-semibold"
+          onClick={() => reserveButton()}
         >
           Reserve Rocket
         </button>
@@ -50,6 +60,7 @@ Rocket.propTypes = {
   name: propTypes.string.isRequired,
   description: propTypes.string.isRequired,
   img: propTypes.string.isRequired,
+  reserved: propTypes.bool.isRequired,
 };
 
 export default Rocket;
