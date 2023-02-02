@@ -11,7 +11,6 @@ const MyProfile = () => {
     return false;
   }
   const resRocketsArr = rockets.filter(filteredArr);
-  console.log(resRocketsArr);
 
   return (
     <div className="flex w-screen h-screen flex-wrap">
@@ -35,6 +34,9 @@ const MyProfile = () => {
                 key={rocket.id}
               />
             )) : <h2>No Reserved Rockets</h2>
+          }
+          {
+          resRocketsArr.length > 0 && (<div className="w-full border-slate-400 py-3 px-2 border-t-2"> </div>)
           }
         </div>
       </div>
