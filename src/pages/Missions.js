@@ -1,15 +1,21 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getMissions, joinMission } from '../redux/missions/missions';
 import Navbar from '../components/Navbar';
-import getMissions from '../redux/missions/fetchMissions';
 
-const MissionsList = () => {
+const Missions = () => {
   const dispatch = useDispatch();
-  const { missions } = useSelector((state) => state.missions);
+  const missions = useSelector((state) => state.missions.missions);
 
-  useEffect(() => {
-    dispatch(getMissions());
-  }, [dispatch]);
+  if (missions.length === 0) {
+    setTimeout(() => {
+      dispatch(getMissions());
+    }, '1000');
+  }
+
+  const handleClick = (missionId) => {
+    dispatch(joinMission(missionId));
+  };
 
   return (
     <div className="overflow-x-auto relative shadow-md rounded-lg">
@@ -49,9 +55,9 @@ const MissionsList = () => {
               </td>
               <td className="py-4 px-6 border">
                 {mission.joined ? (
-                  <button type="button" className="text-[#DD3B4A] border border-[#DD3B4A] text-xs p-2 rounded">Leave Mission</button>
+                  <button type="button" className="text-[#DD3B4A] border border-[#DD3B4A] text-xs p-2 rounded" onClick={() => handleClick(mission.mission_id)}>Leave Mission</button>
                 ) : (
-                  <button type="button" className="text-[#6D757D] border border-[#6D757D] text-xs p-2 rounded">Join Mission</button>
+                  <button type="button" className="text-[#6D757D] border border-[#6D757D] text-xs p-2 rounded" onClick={() => handleClick(mission.mission_id)}>Join Mission</button>
                 )}
               </td>
             </tr>
@@ -59,7 +65,8 @@ const MissionsList = () => {
         </tbody>
       </table>
     </div>
+
   );
 };
 
-export default MissionsList;
+export default Missions;
