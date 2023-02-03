@@ -34,14 +34,17 @@ const MyProfile = () => {
         >
           <h2 className="text-3xl font-semibold mb-4">My Missions</h2>
           {filteredMission.length > 0 ? (
-            <div className="border-2 py-3 px-2 border-slate-400">
+            <div>
               {missions.filter((mission) => mission.joined).map((mission) => (
-                <div key={mission.mission_id}>
+                <div key={mission.mission_id} className="w-full border-2 border-b-0 py-3 px-2 border-slate-400">
                   <h2>{mission.mission_name}</h2>
                 </div>
               ))}
             </div>
           ) : <h2>No Reserved Missions</h2>}
+          {
+          filteredMission.length > 0 && (<div className="w-full border-slate-400 py-3 px-2 border-t-2"> </div>)
+          }
         </div>
         <div
           id="rocketsProfile"
