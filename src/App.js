@@ -12,13 +12,13 @@ export default function App() {
     <Router>
       <Routes>
         <Route
-          path="/"
+          path="/profile"
           element={(
             <MyProfile />
 )}
         />
         <Route
-          path="/rockets"
+          path="/"
           element={(
             <RocketsList />
 )}

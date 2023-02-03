@@ -23,10 +23,10 @@ const Navbar = () => {
       <nav
         className="flex gap-4 text-cyan-600"
       >
-        <NavLink to="/rockets" className={({ isActive }) => (isActive ? activeClassName : undefined)}>Rockets</NavLink>
+        <NavLink to="/" className={({ isActive }) => (isActive ? activeClassName : undefined)}>Rockets</NavLink>
         <NavLink to="/missions" className={({ isActive }) => (isActive ? activeClassName : undefined)}>Missions</NavLink>
         <span className="text-black">|</span>
-        <NavLink to="/" className={({ isActive }) => (isActive ? activeClassName : undefined)}>My Profile</NavLink>
+        <NavLink to="/profile" className={({ isActive }) => (isActive ? activeClassName : undefined)}>My Profile</NavLink>
       </nav>
     </header>
   );
