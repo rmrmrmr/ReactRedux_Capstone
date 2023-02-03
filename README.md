@@ -59,9 +59,9 @@
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo not yet available <a name="live-demo"></a>
+## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://yourdeployedapplicationlink.com)
+- [Live Demo Link](https://beautiful-starship-2d3890.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
