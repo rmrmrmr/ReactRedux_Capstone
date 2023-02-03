@@ -1,4 +1,4 @@
-<a name="readme-top">SpaceX Traveler's Hub</a>
+# SpaceX Traveler's Hub
 
 <!-- TABLE OF CONTENTS -->
 
